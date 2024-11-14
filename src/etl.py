@@ -77,7 +77,7 @@ class BcbCosif:
                 arquivo.write(novo_conteudo)
 
 if __name__ == "__main__":
-    lista = glob.glob('../data/**')
+    lista = glob.glob('data/raw/**')
     lista.sort()
     
     for arquivo in lista:
@@ -87,4 +87,4 @@ if __name__ == "__main__":
         # f._replace_cabecalho(arquivo)
         f.ler_arquivo(arquivo_name=arquivo)
         f.padronizar_colunas()
-        f.save_df(f'../output/{arquivo.split('/')[-1]}')
+        f.save_df(f'data/silver/{arquivo.split('/')[-1]}')
